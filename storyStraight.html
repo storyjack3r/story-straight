@@ -4,19 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Getting your story straight</title>
+<link href="https://fonts.googleapis.com/css?family=Allerta|Capriola|Fredoka+One|Patua+One|Rubik" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
+<link rel="stylesheet" type="text/css" href="style.css">
 
-  <style>
-  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; color:#999;}
-  h1, p, #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 30px; }
-  #sortable li span { position: absolute; margin-left: -1.3em; }
-  p { font-weight:600;}
-  h1 {text-decoration:underline;}
-  .correct {
-  color:#000!important;
-  }
-  </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script src="jquery.ui.touch-punch.min.js"></script>
   <script>
   $( function() {
     $( "#sortable" ).sortable();
@@ -26,7 +20,10 @@
 
 </head>
 <body>
+
  <h1>Getting your story straight</h1>
+ <p>Moves left <span id="chchchchanges">0</span> <!-- Correct <span id="correctPos">0</span>%</p> -->
+<div id="container">
 <ul id="sortable">
 
   <li class="default" id="part1"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Jack and Jill went up the hill to fetch a pail of water</li>
@@ -37,8 +34,11 @@
   <li class="default" id="part6"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>To old Dame Dob, who patched his nob</li>
   <li class="default" id="part7"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>With vinegar and brown paper.</li>
 </ul>
-<p>Moves <span id="chchchchanges">0</span> --- Correct <span id="correctPos">0</span>%</p>
-<!--  <p><button id="order" type="button" onclick="currentOrder()">submit</button></p> -->
+
+</div><!-- end container div-->
+
+
+<!--  <p><button id="order" type="button" onclick="currentOrder()">New story</button></p> -->
  
  <script src="orderComparison.js">
 </script>

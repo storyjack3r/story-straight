@@ -16,6 +16,10 @@ function commentOnChanges(){
 	}
 }
 
+// function glowSelect(){
+// 	
+// }
+
 function currentOrder(){
    userArray = $("#sortable").sortable("toArray");
 //     if (userArray.length != targetArray.length)
@@ -54,6 +58,7 @@ function checkOrder(){
 		window.alert("You got the story straight in " + changes + " goes! " + commentOnChanges());
   	 }
    }
+// $( "#sortable" ).on( "sortstart", glowSelect);
 $( "#sortable" ).on( "sortupdate", countTurns);
 $( "#sortable" ).on( "sortupdate", currentOrder);
 
