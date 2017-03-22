@@ -7,7 +7,7 @@
   display: inline-block;
   }
 
-  h1, p, #sortable li { 
+  h1, h3, p, #sortable li { 
   margin: 0 3px 3px 3px; 
   padding: 0.4em; 
   padding-left: 1.5em; 
@@ -15,6 +15,10 @@
   line-height: 1.1; 
   }
 
+  h3 {
+  opacity: 0.5;
+  }
+  
   #sortable li span { 
   position: absolute; 
   margin-left: -1.3em; 
@@ -31,7 +35,7 @@ body{
 	font-family: 'Rubik', sans-serif; /*Good*/
 	font-family: 'Montserrat', sans-serif;	
 		font-family: 'Patua One', cursive; /*fun*/
-	font-size:27px;
+	font-size:20px;
 	width:100%;
 	  	color:white;
 	}
@@ -39,8 +43,7 @@ body{
   p { 
   	font-weight:600;
   	text-align:center;
-  	color:#F48FB1;
-
+  	color:rgba(255, 255, 255, 0.5);
   	}
 
   h1 {
@@ -48,10 +51,41 @@ body{
   	text-align:center;
   	}
 
-  .correct {
+  .surprise {
   color:#880E4F!important;
-  /*background:#FCE4EC;  */
+	transition: color 0.5s ease;
+	visibility:visible;
+
   }
+  .surpriseP{
+  background-color:#880E4F!important;
+    transition: background-color 0.5s ease;
+  }
+
+  .suspense {
+  color:#26A69A!important;
+	transition: color 0.5s ease;
+	visibility:visible!important;
+  
+  }  
+  
+  
+	.suspenseP {
+   	background-color:#26A69A!important;
+	transition: background-color 0.5s ease;
+   	}
+   	
+   	
+  .curiosity {
+  color:#00B0FF!important;
+  	transition: color 0.5s ease;
+	visibility:visible;
+  }  
+  .curiosityP {
+    background:#00B0FF!important;
+    transition: background-color 0.5s ease;
+   	}
+   	
   
   #container {
   margin-left:15%;
