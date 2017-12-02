@@ -6,21 +6,25 @@ var turns=0;
 var surprise=0;
 var suspense=0;
 var curiosity=0;
+var bonusSurprise=0;
 var surpriseOrder = ["part1", "part2", "part3", "part4", "part7", "part6", "part5"];
 var suspenseOrder = ["part1", "part2", "part3", "part4", "part5", "part6", "part7"];
 var curiosityOrder = ["part1", "part3", "part4", "part5", "part6", "part2", "part7" ];
+var curComplete = 0;
+var susComplete = 0;
+var surComplete = 0;
 var userArray;
-function commentOnChanges(){
+// function commentOnChanges(){
 
-	if (changes<3){
-	return "Sensational!";
-	}
-	else if (changes>8){
-	return "Better luck next time...";
-	}
-	else {return "Really great result.";
-	}
-}
+// 	if (changes<3){
+// 	return "Sensational!";
+// 	}
+// 	else if (changes>8){
+// 	return "Better luck next time...";
+// 	}
+// 	else {return "Really great result.";
+// 	}
+// }
 
 
 
@@ -37,15 +41,21 @@ var x=0;
 //counts number of times order fits selection of predetermined patterns
     for (var i = 0, l=userArray.length; i < l; i++) {
 
-	if (userArray[i] == surpriseOrder[i]) { 
-            surprise++;
+	// if (userArray[i] == surpriseOrder[i]) { 
+ //            surprise++;
                
-			}   
+	// 		}   
 	if (userArray[i] == suspenseOrder[i]) { 
             suspense++;   
+            if (suspense==suspenseOrder.length+1){
+				var susComplete = 1;
+            }
 			}   
 	if (userArray[i] == curiosityOrder[i]) { 
             curiosity++;   
+            if (curiosity==suspenseOrder.length+1){
+				var curComplete = 1;
+            }
 			}   			
 	    }       
 storyPattern = Math.max(surprise, suspense, curiosity);
@@ -91,10 +101,11 @@ if (storyPattern === curiosity) {
  		}
 			var z = document.getElementsByTagName("h3")[0];
 			 z.innerHTML= notificatioN;
-			 z.style.visibility="visible";
+			 z.style.display="inline-block";
 			z.className = classNamE;			 
 	}   
-    
+    var storiesComplete = curComplete + susComplete + surComplete;
+    getElementById("storiesComplete").innerHTML = storiesComplete;
 
 //	checkOrder();
 
@@ -114,14 +125,7 @@ function countTurns(){
 	document.getElementById("chchchchanges").innerHTML=turnsLeft;
    }
    
-// function checkOrder(){
-// 	var allParts=userArray.length;
-// 	correctPc=Math.round((100/allParts)*correctPos);
-// 	document.getElementById("correctPos").innerHTML=correctPc;
-// 	if (correctPc==100){
-// 		window.alert("You got the story straight in " + changes + " goes! " + commentOnChanges());
-//   	 }
-//    }
+
 $( "#sortable" ).on( "sortupdate", countTurns);
 $( "#sortable" ).on( "sortupdate", currentOrder);
 
